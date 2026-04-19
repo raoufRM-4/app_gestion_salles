@@ -1,9 +1,9 @@
 from services.service_salle import ServiceSalle
 from models.salle import Salle
-
+from views.view_salle import ViewSalle
 service = ServiceSalle()
 
-s1 = Salle("S2", "Salle informatique", "laboratoire", 30)
+s1 = Salle("S6", "Salle informatique", "laboratoire", 30)
 if service.ajouter_salle(s1):
     print("ajout réussi")
 else:
@@ -21,3 +21,6 @@ for s in salles:
     s.afficher_infos()
 service.supprimer_salle("S1")
 print("salle supprimée")
+
+app = ViewSalle()
+app.mainloop()
