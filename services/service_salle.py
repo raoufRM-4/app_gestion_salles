@@ -14,6 +14,16 @@ class ServiceSalle:
         else:
             return False
 
+    def modifier_salle(self, salle):
+        if salle.code and salle.description and salle.categorie and salle.capacite:
+            if salle.capacite >= 1:
+                self.dao_salle.update_salle(salle)
+                return True
+            else:
+                return False
+        else:
+            return False
+
     def supprimer_salle(self, code):
         self.dao_salle.delete_salle(code)
 
