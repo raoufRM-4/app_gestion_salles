@@ -30,5 +30,10 @@ class ViewSalle(ctk.CTk):
         ctk.CTkButton(self.frame_actions, text="Modifier", command=self.modifier_salle).pack()
         ctk.CTkButton(self.frame_actions, text="Supprimer", command=self.supprimer_salle).pack()
         ctk.CTkButton(self.frame_actions, text="Rechercher", command=self.rechercher_salle).pack()
-
-    
+        self.tree = ttk.Treeview(self, columns=("code", "desc", "cat", "cap"), show="headings")
+        self.tree.heading("code", text="Code")
+        self.tree.heading("desc", text="Description")
+        self.tree.heading("cat", text="Categorie")
+        self.tree.heading("cap", text="Capacité")
+        self.tree.pack()
+        self.refresh()
