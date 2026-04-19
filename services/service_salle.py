@@ -8,11 +8,11 @@ class ServiceSalle:
         if salle.code and salle.description and salle.categorie and salle.capacite:
             if salle.capacite >= 1:
                 self.dao_salle.insert_salle(salle)
-                return True, "salle ajoutée avec succès"
+                return True
             else:
-                return False, "capacité invalide"
+                return False
         else:
-            return False, "données invalides"
+            return False
 
     def supprimer_salle(self, code):
         self.dao_salle.delete_salle(code)
