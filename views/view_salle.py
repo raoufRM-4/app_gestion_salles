@@ -18,14 +18,17 @@ class ViewSalle(ctk.CTk):
 
         self.code = ctk.CTkEntry(self.frame_infos)
         self.code.pack()
-
         self.description = ctk.CTkEntry(self.frame_infos)
         self.description.pack()
-
         self.categorie = ctk.CTkEntry(self.frame_infos)
         self.categorie.pack()
-
         self.capacite = ctk.CTkEntry(self.frame_infos)
         self.capacite.pack()
+        self.frame_actions = ctk.CTkFrame(self)
+        self.frame_actions.pack()
+        ctk.CTkButton(self.frame_actions, text="Ajouter", command=self.ajouter_salle).pack()
+        ctk.CTkButton(self.frame_actions, text="Modifier", command=self.modifier_salle).pack()
+        ctk.CTkButton(self.frame_actions, text="Supprimer", command=self.supprimer_salle).pack()
+        ctk.CTkButton(self.frame_actions, text="Rechercher", command=self.rechercher_salle).pack()
 
-        
+    
